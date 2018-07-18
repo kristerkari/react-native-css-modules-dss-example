@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <ScrollView className={styles.wrapper}>
+        <ScrollView className={[styles.wrapper]}>
           <Link
             description="Profile card from"
             url="https://themes.getbootstrap.com/products/application"

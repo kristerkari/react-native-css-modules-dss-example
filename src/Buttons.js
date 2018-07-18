@@ -8,15 +8,15 @@ const colors = ["green", "pink", "dark", "orange", "red", "black"];
 
 const Button = (color, index) => {
   return (
-    <View className={styles.buttonWrapper} key={index}>
-      <TouchableHighlight className={styles["button" + titleCase(color)]}>
-        <View className={styles.innerWrapper}>
-          <View className={styles["icon" + titleCase(color)]}>
-            <Text className={styles.iconText}>
+    <View className={[styles.buttonWrapper]} key={index}>
+      <TouchableHighlight className={[styles["button" + titleCase(color)]]}>
+        <View className={[styles.innerWrapper]}>
+          <View className={[styles["icon" + titleCase(color)]]}>
+            <Text className={[styles.iconText]}>
               <FontAwesome name="pencil" />
             </Text>
           </View>
-          <Text className={styles.buttonText}>淘宝购买</Text>
+          <Text className={[styles.buttonText]}>淘宝购买</Text>
         </View>
       </TouchableHighlight>
     </View>
@@ -24,5 +24,5 @@ const Button = (color, index) => {
 };
 
 export const Buttons = () => {
-  return <View className={styles.buttonsWrapper}>{colors.map(Button)}</View>;
+  return <View className={[styles.buttonsWrapper]}>{colors.map(Button)}</View>;
 };

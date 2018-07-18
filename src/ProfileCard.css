@@ -1,7 +1,8 @@
 .profileOuter {
   width: 275px;
   height: 363px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
@@ -10,8 +11,18 @@
 }
 
 .profileWrapper {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-left-color: rgba(0, 0, 0, 0.125);
+  border-right-color: rgba(0, 0, 0, 0.125);
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+  border-top-color: rgba(0, 0, 0, 0.125);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   width: 275px;
   height: 363px;
   margin-left: auto;
@@ -20,7 +31,10 @@
 }
 
 .body {
-  padding: 1.25rem;
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .backgroundImg {
@@ -37,7 +51,10 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   border-width: 3px;
   border-color: #fff;
-  border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -63,7 +80,7 @@
 }
 
 .stats {
-  flex: 1;
+  display: flex;
   flex-direction: row;
   flex-grow: 1;
   margin-left: auto;
@@ -72,14 +89,20 @@
 }
 
 .statsLeft {
-  padding: 0 10px;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
   border-right-color: #d4dbe0;
   border-right-width: 1px;
   height: 38px;
 }
 
 .statsRight {
-  padding: 0 10px;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
   height: 38px;
 }
 

@@ -4,11 +4,11 @@ import styles from "./Link.css";
 
 export const Link = ({ description, url }) => {
   return (
-    <View className={styles.description}>
-      <Text className={styles.descriptionText}>
+    <View className={[styles.description]}>
+      <Text className={[styles.descriptionText]}>
         {description + ":\n"}
         <Text
-          className={styles.descriptionLink}
+          className={[styles.descriptionLink]}
           onPress={() => Linking.openURL(url)}
         >
           {url}

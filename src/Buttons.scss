@@ -2,7 +2,14 @@
 
 @mixin text($color) {
   background-color: $color;
-  border: 1px solid darken($color, 10%);
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-color: darken($color, 10%);
+  border-right-color: darken($color, 10%);
+  border-bottom-color: darken($color, 10%);
+  border-top-color: darken($color, 10%);
 }
 
 @mixin icon($color) {
@@ -12,7 +19,10 @@
 }
 
 .buttonsWrapper {
-  flex: 1;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -23,16 +33,25 @@
   margin-right: 20px;
 }
 
-.button {
-  padding: 0px 18px 0px 0px;
+@mixin button-base() {
+  padding-right: 18px;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   width: 136px;
   height: 32px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  flex: 1;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
 .innerWrapper {
-  flex: 1;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   flex-direction: row;
 }
 
@@ -44,10 +63,13 @@
   height: 32px;
 }
 
-.icon {
+@mixin icon-base() {
   height: 30px;
   width: 32px;
-  padding: 7px 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-right: 5px;
 }
 
@@ -58,11 +80,11 @@
 
 @each $color in $colors-map {
   .button#{nth($color, 1)} {
-    @extend .button;
+    @include button-base;
     @include text(nth($color, 2));
   }
   .icon#{nth($color, 1)} {
-    @extend .icon;
+    @include icon-base;
     @include icon(nth($color, 2));
   }
 }

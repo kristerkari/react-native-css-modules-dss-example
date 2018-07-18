@@ -1,4 +1,7 @@
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const DSSWebpackPlugin = require("dss-webpack");
 const path = require("path");
 
 module.exports = {
@@ -9,6 +12,15 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve("./index.html"),
+    }),
+    new MiniCssExtractPlugin({
+      filename: "index.css",
+    }),
+    new DSSWebpackPlugin({
+      test: /index\.css$/,
+    }),
   ],
   module: {
     rules: [
@@ -19,7 +31,10 @@ module.exports = {
         query: {
           babelrc: false,
           presets: ["@babel/env", "react", "react-native"],
-          plugins: ["react-hot-loader/babel"],
+          plugins: [
+            "react-hot-loader/babel",
+            ["babel-plugin-classnames", { packageName: "dss-classnames" }],
+          ],
         },
       },
       {
@@ -34,13 +49,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
+            loader: DSSWebpackPlugin.loader,
+            query: {
               localIdentName: "[path]___[name]__[local]___[hash:base64:5]",
             },
           },
@@ -52,13 +64,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
+            loader: DSSWebpackPlugin.loader,
+            query: {
               localIdentName: "[path]___[name]__[local]___[hash:base64:5]",
             },
           },
