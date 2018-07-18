@@ -1,9 +1,9 @@
-# React Native + CSS modules
+# React Native + CSS modules + DSS
 
 ![Platform - Android, iOS and Web](https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20Web-blue.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-A simple example app that shows how you can use CSS modules with React Native and React (for browser).
+A simple example app that shows how you can use CSS modules with React Native and [DSS](https://dss-lang.com) with React (for browser).
 
 Have a look at the [src](/src) folder to see code examples.
 
@@ -27,7 +27,7 @@ Have a look at the [src](/src) folder to see code examples.
 
 #### Web specific
 
-- :package: Uses [Webpack](https://webpack.js.org/) + [CSS modules](https://github.com/css-modules/css-modules).
+- :package: Uses [Webpack](https://webpack.js.org/) + [DSS](https://dss-lang.com)
 - :wrench: Uses [React Native for Web](https://github.com/necolas/react-native-web) to make most React Native elements work in the browser.
 
 ## Supported Browsers
